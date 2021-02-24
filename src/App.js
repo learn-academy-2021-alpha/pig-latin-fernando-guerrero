@@ -15,35 +15,118 @@ class App extends Component {
   }
 
   // The "myPigLatinCodeHere" function is where you will put your logic to convert the sentence entered by the user to Pig Latin
-
-  myPigLatinCodeHere = () => {
-    // the variable "userInput" will contain the text input from the user modified into an array of words
+      // the variable "userInput" will contain the text input from the user modified into an array of words
     // no need to change this variable
-    let userInput = this.state.phrase.split(" ")
-    console.log("userInput:", userInput)
-
     // now that we have an array of words, we can map over the array and access each word
-    let translatedWordsArray = userInput.map(currentWord => {
-      // ACTION ITEM: use "currentWord" as a starting point for your code
-      console.log("currentWord:", currentWord)
 
-      let vowelsArray = currentWord.split("").filter(vowel => {
-        return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
+    
+  
+  
+    myPigLatinCodeHere = () => {
+      // the variable "userInput" will contain the text input from the user modified into an array of words
+      // no need to change this variable
+      let userInput = this.state.phrase.split(" ")
+      console.log("userInput:", userInput)
+  
+      // now that we have an array of words, we can map over the array and access each word
+      let translatedWordsArray = userInput.map(currentWord => {
+        // ACTION ITEM: use "currentWord" as a starting point for your code
+        console.log("currentWord:", currentWord)
+  
+        let vowelsArray = currentWord.split("").filter(vowel => {
+          return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u" || vowel === "qu"
+        //}
+      //   function translateWord(currentWord) {
+      //     for (var i=0; i<currentWord.length; i++) {
+      //       if(vowel.indexOf(currentWord[i]) !==-1) break;
+      //       if(currentWord.slice(i, i+2) ==='qu') i=+1
+      //     }
+      //     return currentWord.slice(i) + currentWord.slice(0,1) + "yay"
+      //   }
       })
-      console.log("vowelsArray:", vowelsArray)
 
+      let valIndex = 0
+
+        console.log("vowelsArray:", vowelsArray)  
+        if(currentWord[0]=== vowelsArray[0]){
+          return currentWord + "way"
+        }
+        else if( currentWord[0] === "q" && currentWord[1] === "u"){
+          for(let char of currentWord){
+            if(vowelsArray.includes(char)){
+              valIndex = currentWord.indexOf(char);
+              break;
+            }
+          }
+
+          return currentWord.slice(valIndex) + currentWord.slice(-1, valIndex) + "quay"
+        }
+
+          else{
+            for(let char of currentWord){
+              if(vowelsArray.includes(char)){
+                valIndex = currentWord.indexOf(char);
+                break;
+
+              }
+            }
+            return currentWord.slice(valIndex) + currentWord.slice(0,valIndex) + "ay"
+          }
+
+        // else if(currentWord[0] !== vowelsArray[0]){
+        //   }
+        //   console.log(currentWord[0] !== vowelsArray[0] + "ay")
+
+        // your code here!
+        
+
+        // const vowels = ['a', 'e', 'i', 'o', 'u']
+        // function translate(message) {
+        //   return message.split('').map(translateWord).join('')
+        // }
+        // function translateWord(word) {
+        //   for (var i=0; i<word.length; i++) {
+        //     if(vowel.indexOf(word[i]) !==-1) break;
+        //     if(word.slice(i, i+2) ==='qu') i=+1
+        //   }
+        //   return word.slice(i) + word.slice(0,1) + "yay"
+        // }
+
+        // let pigWord = currentWord.slice( , )
+        // let vowels = ["a" , "e" , "i" , "o" , "u"]
+        // let wordArray = currentWord.split("") 
+        // if (vowels.includes(wordArray[0].toLocaleLowerCase())){
+        //   return currentWord + "yay"
+        // }         
+        // // function slicedWord(pigWord){
+        // //   return pigWord.slice(false , 1)
+        
+        // else 
+        //   return pigWord + currentWord + "yay"
+        
+//find the vowel
+//slice the word
+//store first slice 
+//push to the end of element 
+        
+      
+    
+    
+      
+        // Remember: console.log is your friend :)
+  
+  
+        // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
+      // return currentWord
+  })
+
+  
       // your code here!
-
       // Remember: console.log is your friend :)
-
-
-      // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
-    })
-
-
+      // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd wor
     // joining the array back to a string of translated words
     // no need to change this variable
+    
     let translatedWords = translatedWordsArray.join(" ")
     console.log("translatedWords:", translatedWords)
 
@@ -51,6 +134,7 @@ class App extends Component {
     // no need to change this method
     this.setState({ phraseTranslated: translatedWords })
   }
+
 
   restartGame = () => {
     // this method restarts the game by setting the original state
