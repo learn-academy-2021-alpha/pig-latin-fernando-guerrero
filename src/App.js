@@ -59,7 +59,7 @@ class App extends Component {
             }
           }
 
-          return currentWord.slice(valIndex) + currentWord.slice(-1, valIndex) + "quay"
+          return currentWord.slice(valIndex) + currentWord.slice(0, valIndex) + "ay"
         }
 
           else{
@@ -161,14 +161,14 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>Pig Latin Translator</h1>
+        <h1>~~~~Pig Latin Translator~~~~</h1>
         <img
-          src="https://lh3.googleusercontent.com/QvvsRY5ShwDNEouVMK8_z7QCwS3grkgd4mzZOlom23Hurralk54ObvsyEMM8ZSNR5pEFBeBMzltzEEcgi2llYJnhXTuXClN3njmMjtw3vgn8Go5jr40fHMNzfI64eYRrnHbZUutxCA=w2400"
+          src="https://i.pinimg.com/236x/f4/6b/90/f46b90aecdad133a9dba0a51e3b8b08c--pig-art-art-clothing.jpg"
           alt="pig with butcher cut names in pig latin"
           id="butcherPig"
         />
         <div id="box">
-          <h4>Enter phrase to be translated:</h4>
+          <h2>Enter phrase to be translated:</h2>
           {/* user input field - every DOM event that happens in the input will call the handleChange method and update state */}
           <input
             type="text"
@@ -181,8 +181,8 @@ class App extends Component {
           <button onClick={ this.setUpPreventDefault }>Submit</button>
           <button onClick={ this.restartGame }>Clear</button>
         </div>
-        <p>{ this.state.phraseTranslated }</p>
-        <footer>Coded by ~your name here~</footer>
+        <p className="phrase">{ this.state.phraseTranslated }</p>
+        <footer className="codedBy">Coded by ~Fernando and Guerrero~</footer>
       </>
     )
   }

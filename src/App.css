@@ -1,11 +1,17 @@
 body {
   margin: 2em;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Parisienne', cursive;
   text-align: center;
+  background-image: url("http://blogs.smithsonianmag.com/smartnews/files/2013/06/06_17_2013_book-smell.jpg");
+  background-size: cover;
 }
 
 h1 {
-  font-size: 4em;
+  font-family: 'Parisienne', cursive;
+  font-size: 60px;
+  color:black;
+  border: solid;
+  background-color: teal;
 }
 
 button {
@@ -49,4 +55,20 @@ input {
     padding: 1rem;
     text-align: center;
   }
+}
+
+.codedBy {
+  color: white;
+  border:teal;
+  background-color:teal;
+}
+
+.phrase {
+  font-size: 40px;
+  color: wheat;
+  border:#606060;
+  background-color: #606060;
+  border-radius: .5em
+
+
 }
